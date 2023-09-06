@@ -1,8 +1,6 @@
-id: 319051066
-name: najeeb ibraheem
-exercise name: Event-Driven Chat Server
+Event-Driven Chat Server
 
-submited files:
+files:
 1. chatServer.c: the chatserver implementation
 
 Run the code: ./server <s> 
