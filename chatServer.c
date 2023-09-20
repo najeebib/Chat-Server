@@ -118,7 +118,7 @@ int main (int argc, char *argv[])
 		close(del->fd);
 		del = del->next;
 		free(tmp);
-	}
+	}//free the pool
 	FD_ZERO(&(pool->read_set));
 	FD_ZERO(&(pool->write_set));
 	FD_ZERO(&(pool->ready_read_set));
@@ -207,7 +207,7 @@ int remove_conn(int sd, conn_pool_t* pool) {
 	if(pool->conn_head->fd == sd)//if the connection is the head, remove it make the next connection the new head
 	{
 		conn_t* next = pool->conn_head->next;
-		if(next == NULL)
+		if(next == NULL)//if there is no next connection
 		{
 			free(pool->conn_head);
 			pool->conn_head = NULL;
@@ -215,7 +215,7 @@ int remove_conn(int sd, conn_pool_t* pool) {
 			(pool->nr_conns)--;
 			close(sd);
 		}
-		else
+		else//remove current and make the next connection the new head 
 		{
 			pool->conn_head->next->prev = NULL;
 			pool->conn_head->next = NULL;
