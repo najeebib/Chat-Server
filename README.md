@@ -3,7 +3,7 @@
  files:
 1. chatServer.c: the chatserver implementation
 
-Run the code: ./server <s>
+Run the code: ./server s
 s is the port number of the server
 
 This is a simple chat server, where clients can talk with others.
